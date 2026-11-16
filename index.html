@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="100$の公式サポートページ。使い方、記録・通知・バックアップのよくある質問、お問い合わせ、プライバシーポリシーをご案内します。">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>100$｜サポート・プライバシーポリシー</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d1d1f;
+      --muted: #626268;
+      --blue: #0066cc;
+      --button: #0071e3;
+      --line: #e8e8ed;
+      --soft: #f5f5f7;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 28px; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      letter-spacing: .015em;
+      overflow-wrap: anywhere;
+    }
+    a { color: var(--blue); text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #0066cc;
+      outline-offset: 5px;
+      border-radius: 6px;
+    }
+    .page { width: min(680px, calc(100% - 40px)); margin-inline: auto; }
+    .skip {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      padding: 8px 16px;
+      background: #fff;
+      transform: translateY(-160%);
+      z-index: 2;
+    }
+    .skip:focus { transform: translateY(0); }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-block: 23px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { color: var(--ink); font-size: 17px; font-weight: 650; text-decoration: none; }
+    .topbar span { font-size: 12px; color: var(--muted); letter-spacing: .08em; }
+    .hero { padding: 68px 0 48px; }
+    .eyebrow { margin: 0 0 12px; color: var(--blue); font-size: 12px; font-weight: 650; letter-spacing: .14em; }
+    h1 { margin: 0; font-size: clamp(40px, 9vw, 58px); font-weight: 700; line-height: 1.2; letter-spacing: -.035em; }
+    .hero .lead { margin: 18px 0 24px; font-size: clamp(18px, 4.2vw, 21px); color: var(--muted); line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .tags li { padding: 4px 12px; border-radius: 999px; background: var(--soft); font-size: 12px; color: #515156; }
+    .toc { padding: 23px 24px; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; }
+    .toc h2 { font-size: 14px; margin: 0 0 14px; letter-spacing: .04em; }
+    .toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 4px; list-style: none; counter-reset: toc; margin: 0; padding: 0; }
+    .toc li { counter-increment: toc; }
+    .toc a { display: block; padding-block: 8px; font-size: 14px; text-decoration: none; }
+    .toc a::before { content: counter(toc, decimal-leading-zero); display: inline-block; margin-right: 10px; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+    section { padding-block: 44px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+    h2 { font-size: 27px; line-height: 1.45; letter-spacing: -.025em; margin: 0 0 20px; font-weight: 700; }
+    h3 { font-size: 17px; line-height: 1.65; margin: 25px 0 8px; font-weight: 650; }
+    p { margin: 0 0 16px; }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 1.4em; margin: 12px 0 0; }
+    li + li { margin-top: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .cards li { min-width: 0; padding: 21px; margin: 0; border-radius: 16px; background: var(--soft); }
+    .cards h3 { margin: 0 0 8px; font-size: 16px; }
+    .cards p { color: #515156; font-size: 14px; line-height: 1.8; }
+    .steps { list-style: none; counter-reset: step; padding: 0; margin: 0; }
+    .steps > li { counter-increment: step; position: relative; padding-left: 47px; margin-top: 25px; }
+    .steps > li:first-child { margin-top: 0; }
+    .steps > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .steps h3 { margin: 0 0 5px; }
+    .steps p { font-size: 15px; color: #515156; }
+    .note { padding: 18px 20px; margin-top: 22px; border-radius: 14px; background: #f0f6ff; font-size: 14px; color: #33475f; }
+    .note strong { color: var(--ink); }
+    .faq { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; position: relative; list-style: none; padding: 19px 32px 19px 0; font-size: 15px; font-weight: 650; line-height: 1.7; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 3px; top: 16px; font-size: 22px; font-weight: 400; color: var(--muted); }
+    details[open] summary::after { content: "−"; }
+    .answer { padding: 0 0 21px; font-size: 15px; color: #515156; }
+    .release { padding: 21px 24px; border: 1px solid var(--line); border-radius: 16px; }
+    .release-header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 10px; }
+    .release-header strong { font-size: 21px; letter-spacing: -.02em; }
+    .release-header span { font-size: 13px; color: var(--muted); }
+    .release p { font-size: 14px; color: #515156; }
+    .contact-card { background: var(--soft); border-radius: var(--radius); padding: 27px; }
+    .contact-card p { font-size: 15px; }
+    .mail-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 24px;
+      margin-top: 6px;
+      border-radius: 999px;
+      background: var(--button);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    .mail-button:hover { background: #0066cc; text-decoration: none; }
+    .small { color: var(--muted); font-size: 13px; }
+    .contact-card .small { font-size: 12px; margin-top: 14px; }
+    .privacy h3 { margin-top: 26px; }
+    .privacy p, .privacy li { font-size: 14px; color: #515156; }
+    footer { padding: 29px 0 max(32px, env(safe-area-inset-bottom)); color: var(--muted); font-size: 12px; }
+    footer .links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 12px; }
+    footer a { text-decoration: none; }
+    @media (max-width: 480px) {
+      .hero { padding-top: 46px; padding-bottom: 35px; }
+      section { padding-block: 35px; }
+      h2 { font-size: 24px; }
+      .cards { grid-template-columns: minmax(0, 1fr); }
+      .cards li { padding: 20px; }
+      .toc { padding: 20px; }
+      .toc ol { column-gap: 12px; }
+      .toc a { font-size: 13px; }
+      .contact-card { padding: 22px; }
+      .mail-button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    @media print {
+      body { font-size: 11pt; }
+      .page { width: 100%; max-width: 680px; }
+      .hero { padding-top: 24px; }
+      section { padding-block: 20px; }
+      .skip, .mail-button { display: none; }
+      .cards li, .release, .contact-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <div class="page" id="top">
+    <header class="topbar">
+      <a class="brand" href="#top">100$</a>
+      <span>サポート</span>
+    </header>
+
+    <main id="main">
+      <div class="hero">
+        <p class="eyebrow">SUPPORT &amp; GUIDE</p>
+        <h1>100$</h1>
+        <p class="lead">使い方から、データの引き継ぎまで。<br>毎日の記録をお手伝いします。</p>
+        <ul class="tags" aria-label="アプリの基本情報">
+          <li>iPhone・iOS 17以降</li>
+          <li>オフラインで記録</li>
+          <li>アカウント不要</li>
+        </ul>
+      </div>
+
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">もくじ</h2>
+        <ol>
+          <li><a href="#overview">アプリ概要</a></li>
+          <li><a href="#features">主な機能</a></li>
+          <li><a href="#guide">使い方</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#updates">更新情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#privacy">プライバシーポリシー</a></li>
+        </ol>
+      </nav>
+
+      <section id="overview" aria-labelledby="overview-title">
+        <h2 id="overview-title">アプリ概要</h2>
+        <p>「100$」は、フランクリンの13の徳をもとに、日々の行動と気づきを残すiPhone用の記録アプリです。1週間に1つの徳を重点目標にしながら、自分のペースで習慣を積み重ねられます。</p>
+        <p>記録は端末内に保存します。アカウント登録は不要で、日々の記録や分析にインターネット接続は必要ありません。</p>
+        <p class="small">対応環境：iOS 17以降のiPhone。このページはv1.0.0の仕様を案内しています。</p>
+      </section>
+
+      <section id="features" aria-labelledby="features-title">
+        <h2 id="features-title">主な機能</h2>
+        <ul class="cards">
+          <li><h3>13項目 × 7日間の記録表</h3><p>その日のマスをタップして、失敗した日に黒丸を付け外し。重点目標以外の徳も記録できます。</p></li>
+          <li><h3>1週間に1つの重点目標</h3><p>開始日から7日ごとに目標が切り替わります。13週間で1周、52週間で4周。過去の年間記録も残ります。</p></li>
+          <li><h3>メモと朝晩の振り返り</h3><p>その週の重点目標についての気づきや失敗理由、朝の目標・夜の振り返りを日付別に保存できます。</p></li>
+          <li><h3>記録を分析</h3><p>週ごとの重点目標の失敗日数、徳別の集計、13週間ごとの比較、年間の記録率を表示します。</p></li>
+          <li><h3>自分に合う13の徳へ</h3><p>名称・説明・失敗基準・順番を編集できます。13枠は固定で、過去に保存した記録の定義は保持します。</p></li>
+          <li><h3>朝晩の通知</h3><p>振り返りのためのローカル通知を設定できます。朝と夜それぞれの時刻変更・無効化に対応しています。</p></li>
+          <li><h3>JSONバックアップ</h3><p>記録・メモ・振り返り・設定をファイルに保存し、別の端末の本アプリへ手動で引き継げます。</p></li>
+          <li><h3>過去の記録を編集</h3><p>以前の日の黒丸や振り返りを変更できます。未来の日付には入力できません。</p></li>
+        </ul>
+      </section>
+
+      <section id="guide" aria-labelledby="guide-title">
+        <h2 id="guide-title">使い方</h2>
+        <ol class="steps">
+          <li><h3>開始日と徳を整える</h3><p>右上のハンバーガーメニューから設定を開きます。「開始日」でサイクルの始まりを、「13の徳を編集」で名称・説明・失敗基準を変更できます。順番は編集画面の「編集」から並べ替えます。</p></li>
+          <li><h3>ホームで黒丸を付け外す</h3><p>記録表の、徳と日付が交わるマスをタップすると黒丸が付き、もう一度タップすると外れます。今日以外の記録を変更する場合は、確認画面が出ます。</p></li>
+          <li><h3>中央の「＋」から書き残す</h3><p>フッター中央の「＋」を押し、日付を選びます。その日の週の重点目標のメモと朝晩の振り返りを入力し、「保存」を押してください。ここでメモを保存するだけでは、失敗なしの記録にはなりません。</p></li>
+          <li><h3>前の週や年間記録を見る</h3><p>ホームの曜日・日付の行を左右にスワイプすると、同じ年間記録の前後の週に移動できます。画面左上の年間記録メニューから過去年を選べます。分析も年間記録を切り替えて閲覧できます。</p></li>
+          <li><h3>通知とバックアップを設定する</h3><p>設定の「朝晩の通知」で時刻を選び、通知設定を保存します。バックアップは「バックアップ」→「作成」から保存先を選びます。復元は「復元」から本アプリのバックアップファイルを選び、内容を確認して実行します。</p></li>
+        </ol>
+        <div class="note"><strong>データの引き継ぎは手動です。</strong><br>機種変更やアプリ削除の前にバックアップを保存してください。復元すると、その時点の全記録・設定が置き換わります。</div>
+      </section>
+
+      <section id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">よくある質問</h2>
+        <div class="faq">
+          <details>
+            <summary>黒丸のないマスは「失敗なし」ですか？</summary>
+            <div class="answer"><p>見た目が空欄でも、「未記録」と「失敗なし」の両方があります。まだ触っていないマスは未記録です。「失敗なし」を記録するには、一度タップして黒丸を付け、もう一度タップして外します。過去の日付では、その都度変更の確認が出ます。未記録は成功として集計しません。</p></div>
+          </details>
+          <details>
+            <summary>重点目標以外の徳も記録する必要がありますか？</summary>
+            <div class="answer"><p>1週間の重点目標は1つですが、ホームでは全13項目を記録できます。どの項目を記録するかは自分のペースで決められます。「＋」から入力するメモは、その日が属する週の重点目標についてのものです。</p></div>
+          </details>
+          <details>
+            <summary>記録率とグラフは何を数えていますか？</summary>
+            <div class="answer"><p>記録率は、選択した期間の今日までの日数 × 13項目を分母に、「失敗なし」または「失敗あり」を記録した項目の割合を表示します。重点目標だけを記録しても、分母は13項目全体です。</p><p>週ごとのグラフは、その週の重点目標の失敗日数を0〜7日で表示します。緑の点は記録済みで失敗0日の週、灰色の「＋」は未記録の週です。徳別・13週間ごとの集計は、重点目標以外に記録した項目も含みます。同じ徳の同じ日の失敗は1日として数えます。</p></div>
+          </details>
+          <details>
+            <summary>記録を忘れた日や、未来の日はどうなりますか？</summary>
+            <div class="answer"><p>忘れた日は未記録のまま残り、成功とは数えません。重点目標のサイクルは日付に応じて進みます。過去の日は後から編集できますが、未来の日には黒丸・メモ・振り返りを記録できません。開始日が未来の場合は、その日になるまで入力できません。</p></div>
+          </details>
+          <details>
+            <summary>1年間は何日ですか？ 開始日を変えると消えますか？</summary>
+            <div class="answer"><p>このアプリの1年間は52週間・364日で、暦の1年とは異なります。期間が終わると、日付に応じて次の年間記録を作成します。開始日を変更した場合は新しいサイクルとなり、以前の記録は「保管」として年間記録メニューに残ります。</p></div>
+          </details>
+          <details>
+            <summary>徳を編集・並べ替えしても、過去の記録は残りますか？</summary>
+            <div class="answer"><p>保存済みの記録は、その時点の名称・説明・失敗基準を保持します。定義の編集は今日以降の新しい記録に適用されます。並べ替えは翌週以降の重点目標に反映し、過去と今週の目標は保持します。「フランクリンの13の徳に戻す」でも過去の記録は消えません。</p></div>
+          </details>
+          <details>
+            <summary>通知が届きません。</summary>
+            <div class="answer"><p>通知は初期状態では無効です。設定の「朝晩の通知」で使いたい通知を有効にし、時刻を選んで「通知設定を保存」を押してください。iPhone側でも本アプリの通知を許可する必要があります。同画面の「iPhoneの通知設定を開く」から確認できます。通知時刻は端末のタイムゾーンに従います。</p></div>
+          </details>
+          <details>
+            <summary>機種変更や再インストールで記録を引き継げますか？</summary>
+            <div class="answer"><p>元の端末でバックアップを作成し、新しい端末で本アプリを入れてから「バックアップ」→「復元」でファイルを選んでください。アプリ独自の自動クラウド同期はありません。アプリを削除すると端末内の記録は通常削除されるため、先にバックアップを保管してください。バックアップがない場合、開発者側から記録を復旧する機能はありません。</p></div>
+          </details>
+          <details>
+            <summary>バックアップを復元できません。</summary>
+            <div class="answer"><p>本アプリで作成したJSONバックアップを選んでください。対応しない形式・バージョン、整合性を確認できないファイル、64MBを超えるファイルは読み込めません。手作業で内容を書き換えず、元のバックアップを使用してください。検証でエラーになった場合、既存のデータは置き換えません。</p></div>
+          </details>
+          <details>
+            <summary>保存できない・記録を開けないときは？</summary>
+            <div class="answer"><p>表示されたメッセージと端末の空き容量を確認してください。記録を開けない場合は「もう一度開く」をお試しください。バックアップを確保できていない状態で、アプリを削除しないでください。解決しない場合は、下のお問い合わせからアプリ・iOSのバージョン、操作手順、エラーメッセージをお知らせください。</p></div>
+          </details>
+        </div>
+      </section>
+
+      <section id="updates" aria-labelledby="updates-title">
+        <h2 id="updates-title">更新情報</h2>
+        <div class="release">
+          <div class="release-header"><strong>v1.0.0</strong><span>初期バージョン</span></div>
+          <p>13項目の記録表、週間の重点目標、メモ・朝晩の振り返り、分析、徳の編集、ローカル通知、JSONバックアップに対応しています。</p>
+        </div>
+        <p class="small" style="margin-top:14px">ページ最終更新：<time datetime="2026-11-16">2026年11月16日</time>。アプリの提供状況はApp Storeの掲載情報をご確認ください。</p>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">お問い合わせ</h2>
+        <div class="contact-card">
+          <p>操作についてのご質問、不具合のご報告、ご意見はメールでお寄せください。</p>
+          <p>不具合の場合は、<strong>アプリのバージョン・iOSのバージョン・発生した操作・表示されたメッセージ</strong>があると、状況を確認しやすくなります。</p>
+          <a class="mail-button" href="mailto:&#99;&#114;&#101;&#97;&#116;&#101;&#108;&#97;&#98;&#111;&#110;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;?subject=%E3%80%90100%24%E3%80%91%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" aria-label="100$についてメールで問い合わせる">メールで問い合わせる</a>
+          <p class="small">アプリ名入りの件名でメールアプリが開きます。メールを利用できる端末から、内容をご確認のうえ送信してください。パスワードやバックアップ全体など、機密情報は添付しないでください。</p>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">プライバシーポリシー</h2>
+        <p>本ポリシーは「100$」および本サポートページに適用されます。提供者は、App Storeの商品ページに表示される本アプリのデベロッパです。</p>
+        <p class="small">制定・最終更新：<time datetime="2026-11-16">2026年11月16日</time></p>
+
+        <h3>1. アプリ内で保存する情報</h3>
+        <p>徳の名称・説明・失敗基準・順番、開始日と年間サイクル、日々の記録とメモ、朝晩の振り返り、通知設定を端末内に保存します。アカウント登録は不要です。</p>
+
+        <h3>2. 情報の収集と外部送信</h3>
+        <p>本アプリ独自のサーバーへ記録を送信しません。広告SDK・アクセス解析SDK・独自のクラッシュ情報送信機能を使用せず、利用者を追跡する機能もありません。提供者が利用者の端末内の個々の記録を閲覧する機能はありません。</p>
+
+        <h3>3. バックアップと外部サービス</h3>
+        <p>利用者が操作した場合に、メモ・振り返りを含むJSONファイルを指定の保存先へ書き出します。ファイルにアプリ独自の暗号化は行いません。保存先や共有先の選択にご注意ください。クラウドストレージ等を選んだ場合の同期・取り扱いは、そのサービスの設定・規約に従います。</p>
+        <p>復元では確認後に現在の全記録・設定を置き換えます。アプリ独自のiCloud同期は行いません。OSによる端末バックアップは許可する構成であり、実行・保存先は利用者の端末設定等に従います。</p>
+
+        <h3>4. 保管と削除</h3>
+        <p>端末内の記録は、利用者がアプリデータを削除するまで保持します。iPhoneの設定でアプリを削除すると、通常は端末内のアプリデータも削除されます。「Appを取り除く」ではデータが残ります。書き出したファイルとOSのバックアップは別途管理・削除してください。徳の定義を初期設定に戻す操作では、過去の記録は削除しません。</p>
+        <p>提供者は端末内の記録を保管していないため、お問い合わせによる記録の取り出し・削除・復旧はできません。</p>
+
+        <h3>5. 通知とOSの機能</h3>
+        <p>朝晩の通知は利用者が許可・設定した場合に、端末内で予約します。メモや振り返り本文は通知に含めません。通知は本アプリとiPhoneの設定から無効にできます。</p>
+        <p>アプリの保存データにはiOSのデータ保護を利用し、アプリ独自のパスワード暗号化は行いません。iOSの診断情報等は、利用者の設定およびAppleのポリシーに従います。</p>
+
+        <h3>6. お問い合わせの情報</h3>
+        <p>メールでのお問い合わせでは、送信元メールアドレス、本文、利用者が送付した添付ファイル等を受領します。受領した情報は、回答、不具合調査、必要な対応履歴の管理に利用し、不要になった情報は削除します。送受信は利用するメールサービスを通じて行われます。機密情報や記録全体の送付はお控えください。</p>
+
+        <h3>7. サポートページについて</h3>
+        <p>本ページにはCookie、アクセス解析、広告、外部フォント、JavaScriptを組み込んでいません。公開先のホスティングサービスでは、アクセス時のIPアドレス等をログとして記録する場合があり、その取り扱いは公開先の規約・設定に従います。お問い合わせボタンはメールアプリを開き、このページから自動送信するものではありません。</p>
+
+        <h3>8. ポリシーの変更とお問い合わせ</h3>
+        <p>機能や情報の取り扱いを変更する場合は、本ページのポリシーと最終更新日を更新します。プライバシーに関するご質問・ご相談は、<a href="#contact">お問い合わせ</a>のメールボタンからご連絡ください。</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="links"><a href="#top">ページの先頭へ</a><a href="#contact">お問い合わせ</a><a href="#privacy">プライバシーポリシー</a></div>
+      <p>100$ · サポート</p>
+    </footer>
+  </div>
+</body>
+</html>
